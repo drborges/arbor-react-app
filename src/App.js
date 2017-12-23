@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import Store, { connect, timetravel, MTree, Model } from "arbor-store"
+import React from "react"
+import Store, { connect, timetravel, MTree } from "arbor-store"
 
 import { Timecontrol, TodoForm, TodoItem, SortingOptions } from "./components"
 import { Form, Todo, Todos, Recorder } from "./models"
@@ -28,29 +28,25 @@ store.tree.register("/todos", Todos)
 store.tree.register("/recorder", Recorder)
 store.tree.register("/todos/:index", Todo)
 
-class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <Timecontrol timeline={store.timeline} recorder={this.props.recorder} />
+const App = ({ form, recorder, todos }) => (
+  <div className="app">
+    <Timecontrol timeline={store.timeline} recorder={recorder} />
 
-        <TodoForm form={this.props.form} todos={this.props.todos} />
+    <TodoForm form={form} todos={todos} />
 
-        <SortingOptions todos={this.props.todos} />
+    <SortingOptions todos={todos} />
 
-        <ul>
-          {this.props.todos.map((todo, i) => (
-            <TodoItem
-                key={todo.id}
-                todo={todo}
-                onRemove={() => this.props.todos.splice(i, 1)}
-                onToggle={todo.toggle}
-            />
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
+    <ul>
+      {todos.map((todo, i) => (
+        <TodoItem
+            key={todo.id}
+            todo={todo}
+            onRemove={() => todos.splice(i, 1)}
+            onToggle={todo.toggle}
+        />
+      ))}
+    </ul>
+  </div>
+)
 
 export default connect(store)(App)
