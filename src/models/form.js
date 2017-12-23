@@ -4,7 +4,9 @@ export default class Form {
   }
 
   handleAddTodo(todos) {
-    todos.create(this.todo)
-    this.todo = ""
+    if (this.todo !== "") {
+      todos.create(this.todo)
+      this.todo = ""
+    }
   }
 }

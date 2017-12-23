@@ -1,8 +1,6 @@
 export default class Todos {
   create(title) {
-    if (title !== "") {
-      this.push({ id: Math.random(), title: title, done: false })
-    }
+    this.push({ id: Math.random(), title: title, done: false })
   }
 
   sortByTitle() {
