@@ -46,6 +46,8 @@ const App = ({ form, recorder, todos }) => (
         />
       ))}
     </ul>
+
+    {todos.isEmpty && <div>{'Well done! You finished all you todo items!'}</div>}
   </div>
 )
 

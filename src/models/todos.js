@@ -3,6 +3,10 @@ export default class Todos {
     this.push({ id: Math.random(), title: title, done: false })
   }
 
+  get isEmpty() {
+    return this.length === 0
+  }
+
   sortByTitle() {
     this.sort((todo1, todo2) => {
       if (todo1.title > todo2.title) return 1
