@@ -1,5 +1,6 @@
 import React from "react"
-import Store, { connect, timetravel, MTree } from "arbor-store"
+import connect from "arbor-react"
+import Store, { timetravel, MTree } from "arbor-store"
 
 import { Timecontrol, TodoForm, TodoItem, SortingOptions } from "./components"
 import { Form, Todo, Todos, Recorder } from "./models"
@@ -23,10 +24,10 @@ const store = new TimeMachine({
   ]
 }, { Engine: MTree })
 
-store.tree.register("/form", Form)
-store.tree.register("/todos", Todos)
-store.tree.register("/recorder", Recorder)
-store.tree.register("/todos/:index", Todo)
+store.tree.bind(Form).to("/form")
+store.tree.bind(Todos).to("/todos")
+store.tree.bind(Todo).to("/todos/:index")
+store.tree.bind(Recorder).to("/recorder")
 
 const App = ({ form, recorder, todos }) => (
   <div className="app">

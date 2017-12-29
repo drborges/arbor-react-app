@@ -4,6 +4,7 @@
   "private": true,
   "homepage" : "http://drborges.github.io/arbor-react-app",
   "dependencies": {
+    "arbor-react": "link:../arbor-react",
     "arbor-store": "link:../arbor-store",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
