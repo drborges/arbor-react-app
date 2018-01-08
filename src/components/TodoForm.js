@@ -4,7 +4,7 @@ const TodoForm = ({ form, todos }) => (
   <div className="add-todo-form">
     <input
         value={form.todo}
-        onChange={form.handleChange}
+        onChange={form.handleInputChange}
         onKeyPress={(e) => e.charCode === 13 && form.handleAddTodo(todos)}
     />
     <button

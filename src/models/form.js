@@ -1,5 +1,5 @@
 export default class Form {
-  handleChange({ target }) {
+  handleInputChange({ target }) {
     this.todo = target.value
   }
 
