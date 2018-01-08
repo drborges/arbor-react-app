@@ -140,17 +140,25 @@ aproba@^1.0.3:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
 
-"arbor-react@link:../arbor-react":
-  version "0.0.0"
-  uid ""
+arbor-react@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/arbor-react/-/arbor-react-0.0.3.tgz#c90d58d7dce7d38d50581686431a636ab5300a93"
+  dependencies:
+    arbor-store "^0.0.1"
 
-arbor-store@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/arbor-store/-/arbor-store-0.2.0.tgz#d73e61334c331e95064b2a0ca87ca85a5b719464"
+arbor-store@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/arbor-store/-/arbor-store-0.0.1.tgz#cabe27f679b958630dca883d7600a6e6b72b919a"
 
-"arbor-store@link:../arbor-store":
-  version "0.0.0"
-  uid ""
+arbor-store@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/arbor-store/-/arbor-store-0.4.0.tgz#e625ade5afc04951a0811e9388dd9f3569277d94"
+
+arbor-timetravel@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/arbor-timetravel/-/arbor-timetravel-0.1.0.tgz#224e5ada65f86f87713ca8d03dc968d2918f42e5"
+  dependencies:
+    arbor-store "^0.4.0"
 
 are-we-there-yet@~1.1.2:
   version "1.1.4"

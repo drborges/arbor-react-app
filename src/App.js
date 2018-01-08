@@ -1,6 +1,7 @@
 import React from "react"
+import Arbor from "arbor-store"
 import connect from "arbor-react"
-import Arbor, { timetravel } from "arbor-store"
+import timetravel from "arbor-timetravel"
 
 import { Timecontrol, TodoForm, TodoItem, SortingOptions } from "./components"
 import { Form, Todo, Todos, Recorder } from "./models"
