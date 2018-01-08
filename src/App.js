@@ -1,14 +1,13 @@
 import React from "react"
 import connect from "arbor-react"
-import Store, { timetravel, MTree } from "arbor-store"
+import Arbor, { timetravel } from "arbor-store"
 
 import { Timecontrol, TodoForm, TodoItem, SortingOptions } from "./components"
 import { Form, Todo, Todos, Recorder } from "./models"
 
 import "./App.css"
 
-const TimeMachine = timetravel(Store)
-const store = new TimeMachine({
+const initialState = {
   recorder: {
     recording: false,
   },
@@ -22,12 +21,14 @@ const store = new TimeMachine({
     { id: Math.random(), title: "Support mutation path subscriptions", done: true },
     { id: Math.random(), title: "Implement arbor-timetravel", done: true },
   ]
-}, { Engine: MTree })
+}
 
-store.tree.bind(Form).to("/form")
-store.tree.bind(Todos).to("/todos")
-store.tree.bind(Todo).to("/todos/:index")
-store.tree.bind(Recorder).to("/recorder")
+const store = timetravel(new Arbor(initialState))
+
+store.bind(Form).to("/form")
+store.bind(Todos).to("/todos")
+store.bind(Todo).to("/todos/:index")
+store.bind(Recorder).to("/recorder")
 
 const App = ({ form, recorder, todos }) => (
   <div className="app">
